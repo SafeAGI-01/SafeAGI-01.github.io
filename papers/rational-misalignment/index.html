@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epistemic Traps - SafeAGI-01</title>
+</head>
+<body>
+    <p><a href="../">Back to Papers</a> | <a href="../../">Home</a></p>
+
+    <h1>Epistemic Traps: Rational Misalignment Driven by Model Misspecification</h1>
+
+    <h2>Authors</h2>
+    <p>Xingcheng Xu, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu</p>
+
+    <h2>Institution</h2>
+    <p>Shanghai Artificial Intelligence Laboratory, ShanghaiTech University</p>
+
+    <h2>Year</h2>
+    <p>2026</p>
+
+    <h2>Venue</h2>
+    <p>Preprint</p>
+
+    <h2>Abstract</h2>
+    <p>The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.</p>
+
+    <h2>Overview</h2>
+    <p>This paper demonstrates that persistent AI misalignment behaviors such as sycophancy, hallucination, and strategic deception are not training errors but mathematically rationalizable outcomes arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to AI, the authors show that unsafe behaviors emerge as stable equilibria or oscillatory cycles depending on reward schemes. The framework is validated through extensive behavioral experiments on six state-of-the-art model families (including GPT-4o, GPT-5, Qwen, DeepSeek, and Gemini) with over 30,000 trials. The key insight is that safety is a discrete topological phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude, proposing a paradigm shift from reward engineering to "Subjective Model Engineering."</p>
+
+    <h2>Links</h2>
+    <ul>
+        <li><strong>Code:</strong> <a href="https://github.com/SafeAGI-01/RationalMisalignment">https://github.com/SafeAGI-01/RationalMisalignment</a></li>
+    </ul>
+
+    <h2>BibTeX</h2>
+    <pre><code>@misc{xu2026epistemic,
+  title={Epistemic Traps: Rational Misalignment Driven by Model Misspecification},
+  author={Xu, Xingcheng and Qu, Jingjing and Zhang, Qiaosheng and Lu, Chaochao and Yang, Yanqing and Zou, Na and Hu, Xia},
+  year={2026},
+  howpublished={\url{https://github.com/SafeAGI-01/RationalMisalignment}}
+}</code></pre>
+
+</body>
+</html>

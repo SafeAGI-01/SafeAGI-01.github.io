@@ -5,108 +5,95 @@
   <meta name="description" content="The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models">
   <meta name="keywords" content="LLM, RLHF, Policy Stability, AI Safety, Reinforcement Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Policy Cliff - SafeAGI-01</title>
+  <title>The Policy Cliff | SafeAGI-01</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models">
+  <meta property="og:description" content="A rigorous mathematical framework analyzing why RL often produces brittle policies in LLMs.">
+  <meta property="og:url" content="https://safeagi-01.github.io/papers/policy-cliff/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-  <style>
-    body {
-      font-family: 'Noto Sans', sans-serif;
-    }
-    .publication-title {
-      font-family: 'Google Sans', sans-serif;
-      font-weight: 700;
-    }
-    .publication-authors a {
-      color: #363636;
-    }
-    .publication-authors a:hover {
-      text-decoration: underline;
-    }
-    .publication-venue {
-      color: #f14668;
-    }
-    .section-title {
-      font-family: 'Google Sans', sans-serif;
-    }
-    .content p {
-      line-height: 1.8;
-    }
-    pre {
-      background-color: #f5f5f5;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    .footer {
-      padding: 2rem 1.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="../../static/css/style.css">
 </head>
 <body>
 
-<nav class="navbar is-light" role="navigation">
+<!-- Page Loading -->
+<div class="page-loading">
+  <div class="loader"></div>
+</div>
+
+<!-- Fixed Navbar -->
+<nav class="navbar is-fixed-top is-light" role="navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="../../">
-        <strong>SafeAGI-01</strong>
+        <strong style="color: var(--bg-gradient-start);">SafeAGI-01</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
-    <div class="navbar-menu">
+    <div id="navMenu" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="../../">Home</a>
         <a class="navbar-item" href="../">Papers</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/SafeAGI-01" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+        </a>
       </div>
     </div>
   </div>
 </nav>
 
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero hero-gradient hero-animated" style="padding-top: 52px;">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</h1>
+          <h1 class="title is-2 publication-title has-text-white">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</h1>
 
-          <div class="is-size-5 publication-authors mt-4">
+          <div class="is-size-5 publication-authors mt-4 has-text-white-ter">
             <span class="author-block">
-              <a href="mailto:xingcheng.xu18@gmail.com">Xingcheng Xu</a>
+              <a href="mailto:xingcheng.xu18@gmail.com" class="has-text-white">Xingcheng Xu</a>
             </span>
           </div>
 
-          <div class="is-size-6 publication-authors mt-2">
-            <span class="author-block">Shanghai Artificial Intelligence Laboratory</span>
+          <div class="is-size-6 mt-2 has-text-white-ter">
+            <span>Shanghai Artificial Intelligence Laboratory</span>
           </div>
 
-          <div class="is-size-6 mt-3">
-            <span class="tag is-medium is-info is-light">2025</span>
-            <span class="tag is-medium is-warning is-light publication-venue">arXiv:2507.20150</span>
+          <div class="mt-4">
+            <span class="tag is-medium is-light">2025</span>
+            <span class="tag is-medium is-warning">arXiv:2507.20150</span>
           </div>
 
-          <div class="column has-text-centered mt-4">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="The-Policy-Cliff-Paper-2025.pdf" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2507.20150" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/SafeAGI-01/PolicyCliff" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>TeX Source</span>
-                </a>
-              </span>
-            </div>
+          <div class="publication-links mt-5">
+            <a href="The-Policy-Cliff-Paper-2025.pdf" class="button is-white is-outlined is-medium">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://arxiv.org/abs/2507.20150" class="button is-white is-outlined is-medium">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>arXiv</span>
+            </a>
+            <a href="https://github.com/SafeAGI-01/PolicyCliff" class="button is-white is-medium">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>TeX Source</span>
+            </a>
           </div>
         </div>
       </div>
@@ -114,13 +101,14 @@
   </div>
 </section>
 
+<!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          <p class="drop-cap">
             Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task. This theoretical lens provides a unified explanation for a range of seemingly disparate failures, reframing them as rational outcomes of optimizing rewards that may be incomplete or noisy, especially in the presence of action degeneracy. We extend this analysis from the fundamental single-reward setting to the more realistic multi-reward RL across diverse domains, showing how stability is governed by an "effective reward" aggregation mechanism. We also prove that entropy regularization restores policy stability at the cost of increased stochasticity. Our framework provides a unified explanation for recent empirical findings on deceptive reasoning, instruction-following trade-offs, and RLHF-induced sophistry, and is further validated through perturbation experiments in multi-reward RL. This work advances policy-stability analysis from empirical heuristics towards a principled theory, offering essential insights for designing safer and more trustworthy AI systems.
           </p>
         </div>
@@ -129,7 +117,8 @@
   </div>
 </section>
 
-<section class="section has-background-light">
+<!-- Overview -->
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
@@ -154,30 +143,50 @@
   </div>
 </section>
 
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3 section-title">BibTeX</h2>
-    <pre><code>@article{xu2025policy,
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">BibTeX</h2>
+        <div class="bibtex-container">
+          <button class="copy-button">
+            <i class="fas fa-copy"></i> Copy
+          </button>
+          <pre><code>@article{xu2025policy,
   title={The policy cliff: A theoretical analysis of reward-policy maps in large language models},
   author={Xu, Xingcheng},
   journal={arXiv preprint arXiv:2507.20150},
   year={2025}
 }</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="content has-text-centered">
-    <p>
-      <a class="icon-link" href="https://github.com/SafeAGI-01">
-        <i class="fab fa-github fa-lg"></i>
+    <p class="mb-3">
+      <a class="mr-4" href="https://github.com/SafeAGI-01" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
       </a>
     </p>
     <p class="is-size-7 has-text-grey">
-      SafeAGI-01 Research Group
+      SafeAGI-01 Research Group<br>
+      Shanghai Artificial Intelligence Laboratory
     </p>
   </div>
 </footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="../../static/js/main.js"></script>
 
 </body>
 </html>

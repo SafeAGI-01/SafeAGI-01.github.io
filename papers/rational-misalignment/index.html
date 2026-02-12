@@ -5,113 +5,96 @@
   <meta name="description" content="Epistemic Traps: Rational Misalignment Driven by Model Misspecification">
   <meta name="keywords" content="LLM, AI Safety, Misalignment, Sycophancy, Hallucination, Deception, Berk-Nash">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Epistemic Traps - SafeAGI-01</title>
+  <title>Epistemic Traps | SafeAGI-01</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Epistemic Traps: Rational Misalignment Driven by Model Misspecification">
+  <meta property="og:description" content="AI misalignment behaviors are mathematically rationalizable outcomes of model misspecification.">
+  <meta property="og:url" content="https://safeagi-01.github.io/papers/rational-misalignment/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-  <style>
-    body {
-      font-family: 'Noto Sans', sans-serif;
-    }
-    .publication-title {
-      font-family: 'Google Sans', sans-serif;
-      font-weight: 700;
-    }
-    .publication-authors a {
-      color: #363636;
-    }
-    .publication-authors a:hover {
-      text-decoration: underline;
-    }
-    .publication-venue {
-      color: #48c78e;
-    }
-    .section-title {
-      font-family: 'Google Sans', sans-serif;
-    }
-    .content p {
-      line-height: 1.8;
-    }
-    pre {
-      background-color: #f5f5f5;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    .footer {
-      padding: 2rem 1.5rem;
-    }
-    .quote-block {
-      border-left: 4px solid #3273dc;
-      padding-left: 1rem;
-      font-style: italic;
-      color: #4a4a4a;
-    }
-  </style>
+  <link rel="stylesheet" href="../../static/css/style.css">
 </head>
 <body>
 
-<nav class="navbar is-light" role="navigation">
+<!-- Page Loading -->
+<div class="page-loading">
+  <div class="loader"></div>
+</div>
+
+<!-- Fixed Navbar -->
+<nav class="navbar is-fixed-top is-light" role="navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="../../">
-        <strong>SafeAGI-01</strong>
+        <strong style="color: var(--bg-gradient-start);">SafeAGI-01</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
-    <div class="navbar-menu">
+    <div id="navMenu" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="../../">Home</a>
         <a class="navbar-item" href="../">Papers</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/SafeAGI-01" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+        </a>
       </div>
     </div>
   </div>
 </nav>
 
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero hero-gradient hero-animated" style="padding-top: 52px;">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</h1>
+          <h1 class="title is-2 publication-title has-text-white">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</h1>
 
-          <div class="is-size-5 publication-authors mt-4">
-            <span class="author-block"><a href="mailto:xuxingcheng@pjlab.org.cn">Xingcheng Xu</a><sup>1</sup>,</span>
+          <div class="is-size-5 publication-authors mt-4 has-text-white-ter">
+            <span class="author-block"><a href="mailto:xuxingcheng@pjlab.org.cn" class="has-text-white">Xingcheng Xu</a><sup>1</sup>,</span>
             <span class="author-block">Jingjing Qu<sup>1</sup>,</span>
             <span class="author-block">Qiaosheng Zhang<sup>1</sup>,</span>
-            <span class="author-block">Chaochao Lu<sup>1</sup>,</span>
+            <span class="author-block">Chaochao Lu<sup>1</sup>,</span><br>
             <span class="author-block">Yanqing Yang<sup>2</sup>,</span>
             <span class="author-block">Na Zou<sup>1</sup>,</span>
             <span class="author-block">Xia Hu<sup>1</sup></span>
           </div>
 
-          <div class="is-size-6 publication-authors mt-2">
-            <span class="author-block"><sup>1</sup>Shanghai Artificial Intelligence Laboratory,</span>
-            <span class="author-block"><sup>2</sup>ShanghaiTech University</span>
+          <div class="is-size-6 mt-2 has-text-white-ter">
+            <span><sup>1</sup>Shanghai Artificial Intelligence Laboratory,</span>
+            <span><sup>2</sup>ShanghaiTech University</span>
           </div>
 
-          <div class="is-size-6 mt-3">
-            <span class="tag is-medium is-info is-light">2026</span>
-            <span class="tag is-medium is-success is-light publication-venue">Preprint</span>
+          <div class="mt-4">
+            <span class="tag is-medium is-light">2026</span>
+            <span class="tag is-medium is-success">Preprint</span>
           </div>
 
-          <div class="column has-text-centered mt-4">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="Rational-Misalignment-Paper-2026-01-27.pdf" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/SafeAGI-01/RationalMisalignment" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>TeX Source</span>
-                </a>
-              </span>
-            </div>
+          <div class="publication-links mt-5">
+            <a href="Rational-Misalignment-Paper-2026-01-27.pdf" class="button is-white is-outlined is-medium">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://github.com/SafeAGI-01/RationalMisalignment" class="button is-white is-medium">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>TeX Source</span>
+            </a>
           </div>
         </div>
       </div>
@@ -119,13 +102,28 @@
   </div>
 </section>
 
+<!-- Quote -->
 <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="quote-block">
+          <p class="is-size-5">"Safety is an internal property of the agent's priors, not just an external property of the environment."</p>
+          <p class="has-text-right mt-2 has-text-grey">— The Authors</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          <p class="drop-cap">
             The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.
           </p>
         </div>
@@ -134,15 +132,11 @@
   </div>
 </section>
 
-<section class="section has-background-light">
+<!-- Overview -->
+<section class="section section-alt">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-
-        <div class="quote-block mb-5">
-          <p>"Safety is an internal property of the agent's priors, not just an external property of the environment."</p>
-        </div>
-
         <h2 class="title is-3 section-title">Overview</h2>
         <div class="content has-text-justified">
           <p>
@@ -174,30 +168,50 @@
   </div>
 </section>
 
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3 section-title">BibTeX</h2>
-    <pre><code>@misc{xu2026epistemic,
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">BibTeX</h2>
+        <div class="bibtex-container">
+          <button class="copy-button">
+            <i class="fas fa-copy"></i> Copy
+          </button>
+          <pre><code>@misc{xu2026epistemic,
   title={Epistemic Traps: Rational Misalignment Driven by Model Misspecification},
   author={Xu, Xingcheng and Qu, Jingjing and Zhang, Qiaosheng and Lu, Chaochao and Yang, Yanqing and Zou, Na and Hu, Xia},
   year={2026},
   howpublished={\url{https://github.com/SafeAGI-01/RationalMisalignment}}
 }</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="content has-text-centered">
-    <p>
-      <a class="icon-link" href="https://github.com/SafeAGI-01">
-        <i class="fab fa-github fa-lg"></i>
+    <p class="mb-3">
+      <a class="mr-4" href="https://github.com/SafeAGI-01" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
       </a>
     </p>
     <p class="is-size-7 has-text-grey">
-      SafeAGI-01 Research Group
+      SafeAGI-01 Research Group<br>
+      Shanghai Artificial Intelligence Laboratory
     </p>
   </div>
 </footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="../../static/js/main.js"></script>
 
 </body>
 </html>

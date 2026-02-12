@@ -3,57 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="SafeAGI-01 - Research on AI Safety and Alignment">
-  <meta name="keywords" content="AI Safety, Alignment, LLM, Large Language Models">
+  <meta name="keywords" content="AI Safety, Alignment, LLM, Large Language Models, Machine Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SafeAGI-01</title>
+  <meta name="author" content="SafeAGI-01 Research Group">
+  <title>SafeAGI-01 | AI Safety Research</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SafeAGI-01 | AI Safety Research">
+  <meta property="og:description" content="Research on AI Safety and Alignment - Understanding and improving the safety of large language models and AI agents.">
+  <meta property="og:url" content="https://safeagi-01.github.io/">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- Preload Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-  <style>
-    body {
-      font-family: 'Noto Sans', sans-serif;
-    }
-    .hero-title {
-      font-family: 'Google Sans', sans-serif;
-      font-weight: 700;
-    }
-    .publication-title {
-      font-family: 'Google Sans', sans-serif;
-    }
-    .paper-card {
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .paper-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-    .footer {
-      padding: 2rem 1.5rem;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-<section class="hero is-primary is-medium">
+<!-- Page Loading -->
+<div class="page-loading">
+  <div class="loader"></div>
+</div>
+
+<!-- Fixed Navbar -->
+<nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./">
+        <strong style="color: var(--bg-gradient-start);">SafeAGI-01</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item is-active" href="./">Home</a>
+        <a class="navbar-item" href="papers/">Papers</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/SafeAGI-01" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-medium hero-gradient hero-animated" style="padding-top: 52px;">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 hero-title">SafeAGI-01</h1>
-      <h2 class="subtitle is-4">Research on AI Safety and Alignment</h2>
+      <h1 class="title is-1 hero-title has-text-white">SafeAGI-01</h1>
+      <h2 class="subtitle is-4 has-text-white-ter">Research on AI Safety and Alignment</h2>
+      <div class="buttons is-centered mt-5">
+        <a href="papers/" class="button is-white is-outlined is-medium">
+          <span class="icon"><i class="fas fa-file-alt"></i></span>
+          <span>View Papers</span>
+        </a>
+        <a href="https://github.com/SafeAGI-01" class="button is-white is-medium" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- About Section -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3 has-text-centered">About</h2>
+        <h2 class="title is-3 has-text-centered section-title">About</h2>
         <div class="content has-text-justified">
-          <p>
-            SafeAGI-01 is a research initiative focused on understanding and improving the safety and alignment of artificial intelligence systems, particularly large language models (LLMs) and AI agents. Our work combines rigorous theoretical analysis with empirical validation to address critical challenges in AI safety.
+          <p class="drop-cap">
+            SafeAGI-01 is a research initiative focused on understanding and improving the safety and alignment of artificial intelligence systems, particularly large language models (LLMs) and AI agents. Our work combines rigorous theoretical analysis with empirical validation to address critical challenges in AI safety, including policy stability, model misspecification, and alignment failures.
           </p>
         </div>
       </div>
@@ -61,32 +97,40 @@
   </div>
 </section>
 
-<section class="section has-background-light">
+<!-- Papers Section -->
+<section class="section section-alt">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Papers</h2>
+    <h2 class="title is-3 has-text-centered section-title mb-6">Papers</h2>
     <div class="columns is-centered">
       <div class="column is-10">
 
         <!-- Paper 1: Policy Cliff -->
-        <div class="box paper-card mb-5">
+        <div class="box paper-card mb-5" style="position: relative;">
+          <span class="badge-new">New</span>
           <article class="media">
+            <figure class="media-left is-hidden-mobile">
+              <div class="paper-thumbnail">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </figure>
             <div class="media-content">
               <div class="content">
                 <h3 class="title is-4 publication-title mb-2">
-                  <a href="papers/policy-cliff/">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
+                  <a href="papers/policy-cliff/" style="color: var(--text-dark);">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
                 </h3>
                 <p class="is-size-6 has-text-grey mb-2">
                   <strong>Xingcheng Xu</strong>
                 </p>
-                <p class="is-size-7 has-text-grey-light mb-3">
+                <p class="is-size-7 mb-3">
                   <span class="tag is-info is-light">2025</span>
                   <span class="tag is-warning is-light">arXiv:2507.20150</span>
+                  <span class="tag is-link is-light">Shanghai AI Lab</span>
                 </p>
                 <p class="is-size-6">
                   A rigorous mathematical framework analyzing why RL often produces brittle policies in LLMs. We prove that policy instability stems from non-unique optimal actions and provide unified explanations for alignment failures.
                 </p>
               </div>
-              <nav class="level is-mobile mt-3">
+              <nav class="level is-mobile mt-4">
                 <div class="level-left">
                   <a class="button is-small is-rounded is-dark" href="papers/policy-cliff/">
                     <span class="icon"><i class="fas fa-globe"></i></span>
@@ -111,25 +155,32 @@
         </div>
 
         <!-- Paper 2: Rational Misalignment -->
-        <div class="box paper-card">
+        <div class="box paper-card" style="position: relative;">
+          <span class="badge-new">New</span>
           <article class="media">
+            <figure class="media-left is-hidden-mobile">
+              <div class="paper-thumbnail">
+                <i class="fas fa-brain"></i>
+              </div>
+            </figure>
             <div class="media-content">
               <div class="content">
                 <h3 class="title is-4 publication-title mb-2">
-                  <a href="papers/rational-misalignment/">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
+                  <a href="papers/rational-misalignment/" style="color: var(--text-dark);">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
                 </h3>
                 <p class="is-size-6 has-text-grey mb-2">
                   <strong>Xingcheng Xu</strong>, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu
                 </p>
-                <p class="is-size-7 has-text-grey-light mb-3">
+                <p class="is-size-7 mb-3">
                   <span class="tag is-info is-light">2026</span>
                   <span class="tag is-success is-light">Preprint</span>
+                  <span class="tag is-link is-light">Shanghai AI Lab & ShanghaiTech</span>
                 </p>
                 <p class="is-size-6">
                   Demonstrates that AI misalignment behaviors (sycophancy, hallucination, deception) are mathematically rationalizable outcomes of model misspecification, validated through experiments on six state-of-the-art model families.
                 </p>
               </div>
-              <nav class="level is-mobile mt-3">
+              <nav class="level is-mobile mt-4">
                 <div class="level-left">
                   <a class="button is-small is-rounded is-dark" href="papers/rational-misalignment/">
                     <span class="icon"><i class="fas fa-globe"></i></span>
@@ -154,18 +205,28 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="content has-text-centered">
-    <p>
-      <a class="icon-link" href="https://github.com/SafeAGI-01">
-        <i class="fab fa-github fa-lg"></i>
+    <p class="mb-3">
+      <a class="mr-4" href="https://github.com/SafeAGI-01" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
       </a>
     </p>
     <p class="is-size-7 has-text-grey">
-      SafeAGI-01 Research Group
+      SafeAGI-01 Research Group<br>
+      Shanghai Artificial Intelligence Laboratory
     </p>
   </div>
 </footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="static/js/main.js"></script>
 
 </body>
 </html>

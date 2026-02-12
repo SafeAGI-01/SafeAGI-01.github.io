@@ -1,35 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papers - SafeAGI-01</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Papers - SafeAGI-01">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papers - SafeAGI-01</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .hero-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .paper-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Papers</h1>
-    <p><a href="../">Back to Home</a></p>
 
-    <hr>
+<nav class="navbar is-light" role="navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../">
+        <strong>SafeAGI-01</strong>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../">Home</a>
+        <a class="navbar-item is-active" href="./">Papers</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <h2><a href="policy-cliff/">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a></h2>
-    <p><strong>Authors:</strong> Xingcheng Xu</p>
-    <p><strong>Year:</strong> 2025 | <strong>Venue:</strong> arXiv:2507.20150</p>
-    <details>
-        <summary>Abstract</summary>
-        <p>Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task. This theoretical lens provides a unified explanation for a range of seemingly disparate failures, reframing them as rational outcomes of optimizing rewards that may be incomplete or noisy, especially in the presence of action degeneracy. We extend this analysis from the fundamental single-reward setting to the more realistic multi-reward RL across diverse domains, showing how stability is governed by an "effective reward" aggregation mechanism. We also prove that entropy regularization restores policy stability at the cost of increased stochasticity. Our framework provides a unified explanation for recent empirical findings on deceptive reasoning, instruction-following trade-offs, and RLHF-induced sophistry, and is further validated through perturbation experiments in multi-reward RL. This work advances policy-stability analysis from empirical heuristics towards a principled theory, offering essential insights for designing safer and more trustworthy AI systems.</p>
-    </details>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-2 hero-title">Papers</h1>
+      <h2 class="subtitle is-5">Research Publications from SafeAGI-01</h2>
+    </div>
+  </div>
+</section>
 
-    <hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
 
-    <h2><a href="rational-misalignment/">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a></h2>
-    <p><strong>Authors:</strong> Xingcheng Xu, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu</p>
-    <p><strong>Year:</strong> 2026 | <strong>Venue:</strong> Preprint</p>
-    <details>
-        <summary>Abstract</summary>
-        <p>The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.</p>
-    </details>
+        <!-- Paper 1: Policy Cliff -->
+        <div class="box paper-card mb-5">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h3 class="title is-4 publication-title mb-2">
+                  <a href="policy-cliff/">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
+                </h3>
+                <p class="is-size-6 has-text-grey mb-2">
+                  <strong>Xingcheng Xu</strong>
+                </p>
+                <p class="is-size-7 has-text-grey-light mb-3">
+                  <span class="tag is-info is-light">2025</span>
+                  <span class="tag is-warning is-light">arXiv:2507.20150</span>
+                  <span class="tag is-link is-light">Shanghai AI Lab</span>
+                </p>
+                <details>
+                  <summary class="is-size-6 has-text-weight-semibold" style="cursor: pointer;">Abstract</summary>
+                  <p class="is-size-6 mt-2 has-text-justified">
+                    Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task.
+                  </p>
+                </details>
+              </div>
+              <nav class="level is-mobile mt-3">
+                <div class="level-left">
+                  <a class="button is-small is-rounded is-dark" href="policy-cliff/">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Project</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="policy-cliff/The-Policy-Cliff-Paper-2025.pdf">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://arxiv.org/abs/2507.20150">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://github.com/SafeAGI-01/PolicyCliff">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>TeX</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
 
-    <hr>
+        <!-- Paper 2: Rational Misalignment -->
+        <div class="box paper-card">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h3 class="title is-4 publication-title mb-2">
+                  <a href="rational-misalignment/">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
+                </h3>
+                <p class="is-size-6 has-text-grey mb-2">
+                  <strong>Xingcheng Xu</strong>, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu
+                </p>
+                <p class="is-size-7 has-text-grey-light mb-3">
+                  <span class="tag is-info is-light">2026</span>
+                  <span class="tag is-success is-light">Preprint</span>
+                  <span class="tag is-link is-light">Shanghai AI Lab & ShanghaiTech</span>
+                </p>
+                <details>
+                  <summary class="is-size-6 has-text-weight-semibold" style="cursor: pointer;">Abstract</summary>
+                  <p class="is-size-6 mt-2 has-text-justified">
+                    The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification.
+                  </p>
+                </details>
+              </div>
+              <nav class="level is-mobile mt-3">
+                <div class="level-left">
+                  <a class="button is-small is-rounded is-dark" href="rational-misalignment/">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Project</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="rational-misalignment/Rational-Misalignment-Paper-2026-01-27.pdf">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://github.com/SafeAGI-01/RationalMisalignment">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>TeX</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a class="icon-link" href="https://github.com/SafeAGI-01">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </p>
+    <p class="is-size-7 has-text-grey">
+      SafeAGI-01 Research Group
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>

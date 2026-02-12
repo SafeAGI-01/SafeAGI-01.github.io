@@ -1,20 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeAGI-01</title>
+  <meta charset="utf-8">
+  <meta name="description" content="SafeAGI-01 - Research on AI Safety and Alignment">
+  <meta name="keywords" content="AI Safety, Alignment, LLM, Large Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafeAGI-01</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .hero-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .paper-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to SafeAGI-01</h1>
-    <p>Research on AI Safety and Alignment.</p>
 
-    <h2>Navigation</h2>
-    <ul>
-        <li><a href="papers/">Papers</a></li>
-    </ul>
+<section class="hero is-primary is-medium">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 hero-title">SafeAGI-01</h1>
+      <h2 class="subtitle is-4">Research on AI Safety and Alignment</h2>
+    </div>
+  </div>
+</section>
 
-    <h2>About</h2>
-    <p>SafeAGI-01 is a research initiative focused on understanding and improving the safety and alignment of artificial intelligence systems, particularly large language models (LLMs) and AI agents.</p>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">About</h2>
+        <div class="content has-text-justified">
+          <p>
+            SafeAGI-01 is a research initiative focused on understanding and improving the safety and alignment of artificial intelligence systems, particularly large language models (LLMs) and AI agents. Our work combines rigorous theoretical analysis with empirical validation to address critical challenges in AI safety.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Papers</h2>
+    <div class="columns is-centered">
+      <div class="column is-10">
+
+        <!-- Paper 1: Policy Cliff -->
+        <div class="box paper-card mb-5">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h3 class="title is-4 publication-title mb-2">
+                  <a href="papers/policy-cliff/">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
+                </h3>
+                <p class="is-size-6 has-text-grey mb-2">
+                  <strong>Xingcheng Xu</strong>
+                </p>
+                <p class="is-size-7 has-text-grey-light mb-3">
+                  <span class="tag is-info is-light">2025</span>
+                  <span class="tag is-warning is-light">arXiv:2507.20150</span>
+                </p>
+                <p class="is-size-6">
+                  A rigorous mathematical framework analyzing why RL often produces brittle policies in LLMs. We prove that policy instability stems from non-unique optimal actions and provide unified explanations for alignment failures.
+                </p>
+              </div>
+              <nav class="level is-mobile mt-3">
+                <div class="level-left">
+                  <a class="button is-small is-rounded is-dark" href="papers/policy-cliff/">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Project</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="papers/policy-cliff/The-Policy-Cliff-Paper-2025.pdf">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://arxiv.org/abs/2507.20150">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://github.com/SafeAGI-01/PolicyCliff">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>TeX</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+
+        <!-- Paper 2: Rational Misalignment -->
+        <div class="box paper-card">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h3 class="title is-4 publication-title mb-2">
+                  <a href="papers/rational-misalignment/">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
+                </h3>
+                <p class="is-size-6 has-text-grey mb-2">
+                  <strong>Xingcheng Xu</strong>, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu
+                </p>
+                <p class="is-size-7 has-text-grey-light mb-3">
+                  <span class="tag is-info is-light">2026</span>
+                  <span class="tag is-success is-light">Preprint</span>
+                </p>
+                <p class="is-size-6">
+                  Demonstrates that AI misalignment behaviors (sycophancy, hallucination, deception) are mathematically rationalizable outcomes of model misspecification, validated through experiments on six state-of-the-art model families.
+                </p>
+              </div>
+              <nav class="level is-mobile mt-3">
+                <div class="level-left">
+                  <a class="button is-small is-rounded is-dark" href="papers/rational-misalignment/">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Project</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="papers/rational-misalignment/Rational-Misalignment-Paper-2026-01-27.pdf">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                  <a class="button is-small is-rounded is-dark ml-2" href="https://github.com/SafeAGI-01/RationalMisalignment">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>TeX</span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a class="icon-link" href="https://github.com/SafeAGI-01">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </p>
+    <p class="is-size-7 has-text-grey">
+      SafeAGI-01 Research Group
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>

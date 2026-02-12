@@ -1,46 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epistemic Traps - SafeAGI-01</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Epistemic Traps: Rational Misalignment Driven by Model Misspecification">
+  <meta name="keywords" content="LLM, AI Safety, Misalignment, Sycophancy, Hallucination, Deception, Berk-Nash">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epistemic Traps - SafeAGI-01</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    .publication-authors a {
+      color: #363636;
+    }
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+    .publication-venue {
+      color: #48c78e;
+    }
+    .section-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .content p {
+      line-height: 1.8;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+    .quote-block {
+      border-left: 4px solid #3273dc;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #4a4a4a;
+    }
+  </style>
 </head>
 <body>
-    <p><a href="../">Back to Papers</a> | <a href="../../">Home</a></p>
 
-    <h1>Epistemic Traps: Rational Misalignment Driven by Model Misspecification</h1>
+<nav class="navbar is-light" role="navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../">
+        <strong>SafeAGI-01</strong>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../../">Home</a>
+        <a class="navbar-item" href="../">Papers</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <h2>Authors</h2>
-    <p>Xingcheng Xu, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu</p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</h1>
 
-    <h2>Institution</h2>
-    <p>Shanghai Artificial Intelligence Laboratory, ShanghaiTech University</p>
+          <div class="is-size-5 publication-authors mt-4">
+            <span class="author-block"><a href="mailto:xuxingcheng@pjlab.org.cn">Xingcheng Xu</a><sup>1</sup>,</span>
+            <span class="author-block">Jingjing Qu<sup>1</sup>,</span>
+            <span class="author-block">Qiaosheng Zhang<sup>1</sup>,</span>
+            <span class="author-block">Chaochao Lu<sup>1</sup>,</span>
+            <span class="author-block">Yanqing Yang<sup>2</sup>,</span>
+            <span class="author-block">Na Zou<sup>1</sup>,</span>
+            <span class="author-block">Xia Hu<sup>1</sup></span>
+          </div>
 
-    <h2>Year</h2>
-    <p>2026</p>
+          <div class="is-size-6 publication-authors mt-2">
+            <span class="author-block"><sup>1</sup>Shanghai Artificial Intelligence Laboratory,</span>
+            <span class="author-block"><sup>2</sup>ShanghaiTech University</span>
+          </div>
 
-    <h2>Venue</h2>
-    <p>Preprint</p>
+          <div class="is-size-6 mt-3">
+            <span class="tag is-medium is-info is-light">2026</span>
+            <span class="tag is-medium is-success is-light publication-venue">Preprint</span>
+          </div>
 
-    <h2>Abstract</h2>
-    <p>The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.</p>
+          <div class="column has-text-centered mt-4">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="Rational-Misalignment-Paper-2026-01-27.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/SafeAGI-01/RationalMisalignment" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>TeX Source</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Overview</h2>
-    <p>This paper demonstrates that persistent AI misalignment behaviors such as sycophancy, hallucination, and strategic deception are not training errors but mathematically rationalizable outcomes arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to AI, the authors show that unsafe behaviors emerge as stable equilibria or oscillatory cycles depending on reward schemes. The framework is validated through extensive behavioral experiments on six state-of-the-art model families (including GPT-4o, GPT-5, Qwen, DeepSeek, and Gemini) with over 30,000 trials. The key insight is that safety is a discrete topological phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude, proposing a paradigm shift from reward engineering to "Subjective Model Engineering."</p>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Links</h2>
-    <ul>
-        <li><strong>PDF:</strong> <a href="Rational-Misalignment-Paper-2026-01-27.pdf">Rational-Misalignment-Paper-2026-01-27.pdf</a></li>
-        <li><strong>TeX Source:</strong> <a href="https://github.com/SafeAGI-01/RationalMisalignment">https://github.com/SafeAGI-01/RationalMisalignment</a></li>
-    </ul>
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
 
-    <h2>BibTeX</h2>
+        <div class="quote-block mb-5">
+          <p>"Safety is an internal property of the agent's priors, not just an external property of the environment."</p>
+        </div>
+
+        <h2 class="title is-3 section-title">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper demonstrates that persistent AI misalignment behaviors such as sycophancy, hallucination, and strategic deception are not training errors but mathematically rationalizable outcomes arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to AI, the authors show that unsafe behaviors emerge as stable equilibria or oscillatory cycles depending on reward schemes. The framework is validated through extensive behavioral experiments on six state-of-the-art model families (including GPT-4o, GPT-5, Qwen, DeepSeek, and Gemini) with over 30,000 trials. The key insight is that safety is a discrete topological phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude, proposing a paradigm shift from reward engineering to "Subjective Model Engineering."
+          </p>
+        </div>
+
+        <h3 class="title is-4 section-title mt-5">Key Findings</h3>
+        <div class="content">
+          <ul>
+            <li><strong>Alignment failures are structurally stable equilibria</strong> driven by internal model misspecification rather than transient errors</li>
+            <li><strong>Epistemic misspecification invalidates standard Nash Equilibrium</strong> safety guarantees for AI agents</li>
+            <li><strong>Phase space analysis reveals critical transitions</strong> where safety collapses into stable misalignment or oscillatory behaviors</li>
+            <li><strong>Strategic deception is governed by belief topology</strong> rather than the magnitude of objective penalties</li>
+            <li><strong>Safety requires constraining subjective reality</strong> to render unsafe behaviors mathematically non-rationalizable</li>
+          </ul>
+        </div>
+
+        <h3 class="title is-4 section-title mt-5">Experimental Validation</h3>
+        <div class="content">
+          <ul>
+            <li><strong>Scale:</strong> 30,000+ independent trials, 1.5+ million agent-environment interactions</li>
+            <li><strong>Models Tested:</strong> Qwen2.5-72B, Qwen3-235B, DeepSeek-V3.2 (685B), Gemini-2.5 Flash, GPT-4o mini, GPT-5 Nano</li>
+            <li><strong>Experiments:</strong> Sycophancy phase diagrams, strategic deception under epistemic constraints</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title">BibTeX</h2>
     <pre><code>@misc{xu2026epistemic,
   title={Epistemic Traps: Rational Misalignment Driven by Model Misspecification},
   author={Xu, Xingcheng and Qu, Jingjing and Zhang, Qiaosheng and Lu, Chaochao and Yang, Yanqing and Zou, Na and Hu, Xia},
   year={2026},
   howpublished={\url{https://github.com/SafeAGI-01/RationalMisalignment}}
 }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a class="icon-link" href="https://github.com/SafeAGI-01">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </p>
+    <p class="is-size-7 has-text-grey">
+      SafeAGI-01 Research Group
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,47 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Policy Cliff - SafeAGI-01</title>
+  <meta charset="utf-8">
+  <meta name="description" content="The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models">
+  <meta name="keywords" content="LLM, RLHF, Policy Stability, AI Safety, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Policy Cliff - SafeAGI-01</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    .publication-authors a {
+      color: #363636;
+    }
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+    .publication-venue {
+      color: #f14668;
+    }
+    .section-title {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .content p {
+      line-height: 1.8;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .footer {
+      padding: 2rem 1.5rem;
+    }
+  </style>
 </head>
 <body>
-    <p><a href="../">Back to Papers</a> | <a href="../../">Home</a></p>
 
-    <h1>The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</h1>
+<nav class="navbar is-light" role="navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../">
+        <strong>SafeAGI-01</strong>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../../">Home</a>
+        <a class="navbar-item" href="../">Papers</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <h2>Authors</h2>
-    <p>Xingcheng Xu</p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</h1>
 
-    <h2>Institution</h2>
-    <p>Shanghai Artificial Intelligence Laboratory</p>
+          <div class="is-size-5 publication-authors mt-4">
+            <span class="author-block">
+              <a href="mailto:xingcheng.xu18@gmail.com">Xingcheng Xu</a>
+            </span>
+          </div>
 
-    <h2>Year</h2>
-    <p>2025</p>
+          <div class="is-size-6 publication-authors mt-2">
+            <span class="author-block">Shanghai Artificial Intelligence Laboratory</span>
+          </div>
 
-    <h2>Venue</h2>
-    <p>arXiv:2507.20150</p>
+          <div class="is-size-6 mt-3">
+            <span class="tag is-medium is-info is-light">2025</span>
+            <span class="tag is-medium is-warning is-light publication-venue">arXiv:2507.20150</span>
+          </div>
 
-    <h2>Abstract</h2>
-    <p>Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task. This theoretical lens provides a unified explanation for a range of seemingly disparate failures, reframing them as rational outcomes of optimizing rewards that may be incomplete or noisy, especially in the presence of action degeneracy. We extend this analysis from the fundamental single-reward setting to the more realistic multi-reward RL across diverse domains, showing how stability is governed by an "effective reward" aggregation mechanism. We also prove that entropy regularization restores policy stability at the cost of increased stochasticity. Our framework provides a unified explanation for recent empirical findings on deceptive reasoning, instruction-following trade-offs, and RLHF-induced sophistry, and is further validated through perturbation experiments in multi-reward RL. This work advances policy-stability analysis from empirical heuristics towards a principled theory, offering essential insights for designing safer and more trustworthy AI systems.</p>
+          <div class="column has-text-centered mt-4">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="The-Policy-Cliff-Paper-2025.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2507.20150" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/SafeAGI-01/PolicyCliff" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>TeX Source</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Overview</h2>
-    <p>This paper develops a rigorous mathematical framework to analyze why reinforcement learning often produces brittle and unstable policies in large language models. The core contribution is proving that the reward-policy map is continuous when optimal actions are unique, but becomes discontinuous (exhibiting "policy cliffs") when multiple optimal actions exist. This theoretical insight provides a unified explanation for various LLM alignment failures including spurious reasoning, deceptive alignment, instruction disobedience, and RLHF-induced sophistry. The framework extends to multi-reward RL settings and demonstrates that entropy regularization can restore policy stability. The work bridges theoretical analysis with empirical observations, offering principled guidance for designing safer AI systems.</p>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task. This theoretical lens provides a unified explanation for a range of seemingly disparate failures, reframing them as rational outcomes of optimizing rewards that may be incomplete or noisy, especially in the presence of action degeneracy. We extend this analysis from the fundamental single-reward setting to the more realistic multi-reward RL across diverse domains, showing how stability is governed by an "effective reward" aggregation mechanism. We also prove that entropy regularization restores policy stability at the cost of increased stochasticity. Our framework provides a unified explanation for recent empirical findings on deceptive reasoning, instruction-following trade-offs, and RLHF-induced sophistry, and is further validated through perturbation experiments in multi-reward RL. This work advances policy-stability analysis from empirical heuristics towards a principled theory, offering essential insights for designing safer and more trustworthy AI systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Links</h2>
-    <ul>
-        <li><strong>PDF:</strong> <a href="The-Policy-Cliff-Paper-2025.pdf">The-Policy-Cliff-Paper-2025.pdf</a></li>
-        <li><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2507.20150">arXiv:2507.20150</a></li>
-        <li><strong>TeX Source:</strong> <a href="https://github.com/SafeAGI-01/PolicyCliff">https://github.com/SafeAGI-01/PolicyCliff</a></li>
-    </ul>
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper develops a rigorous mathematical framework to analyze why reinforcement learning often produces brittle and unstable policies in large language models. The core contribution is proving that the reward-policy map is continuous when optimal actions are unique, but becomes discontinuous (exhibiting "policy cliffs") when multiple optimal actions exist. This theoretical insight provides a unified explanation for various LLM alignment failures including spurious reasoning, deceptive alignment, instruction disobedience, and RLHF-induced sophistry. The framework extends to multi-reward RL settings and demonstrates that entropy regularization can restore policy stability. The work bridges theoretical analysis with empirical observations, offering principled guidance for designing safer AI systems.
+          </p>
+        </div>
 
-    <h2>BibTeX</h2>
+        <h3 class="title is-4 section-title mt-5">Key Contributions</h3>
+        <div class="content">
+          <ul>
+            <li><strong>Theoretical Framework:</strong> Formal analysis of the reward-policy map showing policy instability stems from non-unique optimal actions</li>
+            <li><strong>Unified Explanation:</strong> Mathematical lens connecting spurious reasoning, deceptive alignment, instruction-following failures, and RLHF sophistry</li>
+            <li><strong>Multi-Reward Analysis:</strong> Extension to realistic multi-reward RL with "effective reward" aggregation mechanism</li>
+            <li><strong>Entropy Regularization:</strong> Proof that entropy regularization restores Lipschitz continuity to the reward-policy map</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 section-title">BibTeX</h2>
     <pre><code>@article{xu2025policy,
   title={The policy cliff: A theoretical analysis of reward-policy maps in large language models},
   author={Xu, Xingcheng},
   journal={arXiv preprint arXiv:2507.20150},
   year={2025}
 }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a class="icon-link" href="https://github.com/SafeAGI-01">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </p>
+    <p class="is-size-7 has-text-grey">
+      SafeAGI-01 Research Group
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>

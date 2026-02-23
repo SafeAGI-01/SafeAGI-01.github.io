@@ -1,4 +1,4 @@
-# SafeAGI-01
+# SafeAGI
 
 Research on AI Safety and Alignment.
 

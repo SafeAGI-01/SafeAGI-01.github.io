@@ -1,5 +1,5 @@
 /* ============================================
-   SafeAGI-01 - Main JavaScript
+   SafeAGI - Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {

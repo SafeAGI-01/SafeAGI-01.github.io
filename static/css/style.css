@@ -91,12 +91,87 @@
   --link-hover: #7cacf8;
 }
 
+/* ---- Force override Bulma backgrounds ---- */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .hero-body,
+html[data-theme="dark"] .section,
+html[data-theme="dark"] .footer {
+  background-color: var(--bg-body) !important;
+  color: var(--text-dark) !important;
+}
+
+html[data-theme="dark"] .section-alt {
+  background-color: var(--bg-light) !important;
+}
+
+html[data-theme="dark"] .navbar,
+html[data-theme="dark"] .navbar.is-fixed-top {
+  background-color: var(--navbar-bg) !important;
+  background: var(--navbar-bg) !important;
+}
+
+html[data-theme="dark"] .navbar.is-fixed-top.scrolled {
+  background: var(--navbar-bg-scroll) !important;
+}
+
+html[data-theme="dark"] .box,
+html[data-theme="dark"] .box.paper-card {
+  background-color: var(--card-bg) !important;
+  color: var(--content-text) !important;
+}
+
+html[data-theme="dark"] .title,
+html[data-theme="dark"] .subtitle {
+  color: var(--text-dark) !important;
+}
+
+html[data-theme="dark"] .has-text-grey {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="dark"] .navbar-item {
+  color: var(--navbar-text) !important;
+}
+
+html[data-theme="dark"] .navbar-menu {
+  background-color: var(--navbar-bg-scroll) !important;
+}
+
+html[data-theme="dark"] .content strong,
+html[data-theme="dark"] strong {
+  color: var(--text-dark) !important;
+}
+
+html[data-theme="dark"] .tag.is-info.is-light {
+  background: linear-gradient(135deg, var(--tag-info-start), var(--tag-info-end)) !important;
+  color: var(--content-text) !important;
+}
+
+html[data-theme="dark"] .tag.is-warning.is-light {
+  background: linear-gradient(135deg, var(--tag-warning-start), var(--tag-warning-end)) !important;
+  color: var(--content-text) !important;
+}
+
+html[data-theme="dark"] .tag.is-link.is-light {
+  background: var(--tag-link-bg) !important;
+  color: var(--tag-link-text) !important;
+}
+
+html[data-theme="dark"] .button.is-dark {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%) !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="dark"] .button.is-dark:hover {
+  background: linear-gradient(135deg, #475569 0%, #334155 100%) !important;
+}
+
 /* ---- Typography ---- */
 body {
   font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-dark);
   line-height: 1.7;
-  background-color: var(--bg-body);
+  background-color: var(--bg-body) !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -164,8 +239,10 @@ body {
 }
 
 /* ---- Navbar ---- */
+.navbar,
 .navbar.is-fixed-top {
-  background: var(--navbar-bg);
+  background: var(--navbar-bg) !important;
+  background-color: var(--navbar-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--card-border);
@@ -174,7 +251,8 @@ body {
 }
 
 .navbar.is-fixed-top.scrolled {
-  background: var(--navbar-bg-scroll);
+  background: var(--navbar-bg-scroll) !important;
+  background-color: var(--navbar-bg-scroll) !important;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 

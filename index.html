@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/style.css">
+  <script>
+    (function(){var t=localStorage.getItem('safeagi-theme');if(t){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
 </head>
 <body>
 
@@ -35,11 +38,11 @@
 </div>
 
 <!-- Fixed Navbar -->
-<nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="./">
-        <strong style="color: var(--bg-gradient-start);">SafeAGI</strong>
+        <strong>SafeAGI</strong>
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
@@ -56,6 +59,12 @@
         <a class="navbar-item" href="https://github.com/SafeAGI-01" target="_blank">
           <span class="icon"><i class="fab fa-github"></i></span>
         </a>
+        <div class="navbar-item">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -116,7 +125,7 @@
             <div class="media-content">
               <div class="content">
                 <h3 class="title is-4 publication-title mb-2">
-                  <a href="papers/policy-cliff/" style="color: var(--text-dark);" target="_blank">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
+                  <a href="papers/policy-cliff/" target="_blank">The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Large Language Models</a>
                 </h3>
                 <p class="is-size-6 has-text-grey mb-2">
                   Xingcheng Xu
@@ -171,7 +180,7 @@
             <div class="media-content">
               <div class="content">
                 <h3 class="title is-4 publication-title mb-2">
-                  <a href="papers/rational-misalignment/" style="color: var(--text-dark);" target="_blank">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
+                  <a href="papers/rational-misalignment/" target="_blank">Epistemic Traps: Rational Misalignment Driven by Model Misspecification</a>
                 </h3>
                 <p class="is-size-6 has-text-grey mb-2">
                   Xingcheng Xu, Jingjing Qu, Qiaosheng Zhang, Chaochao Lu, Yanqing Yang, Na Zou, Xia Hu

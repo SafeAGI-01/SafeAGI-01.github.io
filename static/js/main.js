@@ -17,18 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    // Force dark mode styles on elements that Bulma overrides
-    var isDark = theme === 'dark';
+    // Force dark mode on body directly to beat Bulma
+    if (theme === 'dark') {
+      document.body.style.backgroundColor = '#18181b';
+      document.body.style.color = '#e4e4e7';
+    } else {
+      document.body.style.backgroundColor = '';
+      document.body.style.color = '';
+    }
+    // Force cards
     document.querySelectorAll('.content-card, .box.paper-card').forEach(function(el) {
-      if (isDark) {
-        el.style.background = '#1e293b';
-        el.style.borderColor = 'rgba(255,255,255,0.06)';
-        el.style.boxShadow = '0 2px 16px rgba(0,0,0,0.3)';
-        el.style.color = '#cbd5e1';
+      if (theme === 'dark') {
+        el.style.backgroundColor = '#27272a';
+        el.style.borderColor = 'rgba(255,255,255,0.08)';
+        el.style.color = '#d4d4d8';
       } else {
-        el.style.background = '';
+        el.style.backgroundColor = '';
         el.style.borderColor = '';
-        el.style.boxShadow = '';
         el.style.color = '';
       }
     });

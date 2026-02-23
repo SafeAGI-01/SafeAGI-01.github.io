@@ -22,7 +22,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../../static/css/style.css?v=2">
+  <link rel="stylesheet" href="../../static/css/style.css?v=3">
+  <!-- Inline dark mode overrides — guarantees Bulma is beaten -->
+  <style>
+    html[data-theme="dark"] body{background:#18181b!important;color:#e4e4e7!important}
+    html[data-theme="dark"] .section,html[data-theme="dark"] .hero-body{background-color:transparent!important}
+    html[data-theme="dark"] .navbar,html[data-theme="dark"] .navbar.is-fixed-top{background:rgba(24,24,27,.88)!important}
+    html[data-theme="dark"] .navbar-menu{background-color:rgba(24,24,27,.96)!important}
+    html[data-theme="dark"] .navbar-item{color:#d4d4d8!important}
+    html[data-theme="dark"] .box,html[data-theme="dark"] .content-card{background:#27272a!important;color:#d4d4d8!important;border-color:rgba(255,255,255,.08)!important}
+    html[data-theme="dark"] .title,html[data-theme="dark"] .subtitle{color:#e4e4e7!important}
+    html[data-theme="dark"] .content p,html[data-theme="dark"] .content li{color:#d4d4d8!important}
+    html[data-theme="dark"] .has-text-grey{color:#a1a1aa!important}
+    html[data-theme="dark"] strong{color:#e4e4e7!important}
+    html[data-theme="dark"] .footer{background:linear-gradient(135deg,#09090b,#18181b)!important}
+  </style>
   <script>
     (function(){var t=localStorage.getItem('safeagi-theme');if(t){document.documentElement.setAttribute('data-theme',t)}else{document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}})();
   </script>

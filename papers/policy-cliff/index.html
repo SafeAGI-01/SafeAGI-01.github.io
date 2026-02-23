@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../../static/css/style.css?v=5">
+  <link rel="stylesheet" href="../../static/css/style.css?v=6">
   <!-- Inline dark mode overrides -->
   <style>
     html[data-theme="dark"] body{background:#0f172a!important;color:#cbd5e1!important}
@@ -197,16 +197,34 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="content has-text-centered">
-    <p class="mb-3">
-      <a class="mr-4" href="https://github.com/SafeAGI-01" target="_blank">
-        <i class="fab fa-github fa-2x"></i>
-      </a>
-    </p>
-    <p class="is-size-7 has-text-grey">
-      SafeAGI Research Group<br>
-      Shanghai Artificial Intelligence Laboratory
-    </p>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="columns">
+          <div class="column is-5">
+            <p class="has-text-weight-bold mb-2" style="color: var(--text-dark);">SafeAGI</p>
+            <p class="is-size-7 has-text-grey">
+              Research on AI Safety and Alignment.<br>
+              Shanghai Artificial Intelligence Laboratory.
+            </p>
+          </div>
+          <div class="column is-3">
+            <p class="is-size-7 has-text-weight-semibold mb-2" style="color: var(--text-dark);">Pages</p>
+            <p class="is-size-7"><a href="../../">Home</a></p>
+            <p class="is-size-7"><a href="../">Papers</a></p>
+          </div>
+          <div class="column is-4">
+            <p class="is-size-7 has-text-weight-semibold mb-2" style="color: var(--text-dark);">Links</p>
+            <p class="is-size-7"><a href="https://github.com/SafeAGI-01" target="_blank"><i class="fab fa-github mr-1"></i> GitHub</a></p>
+            <p class="is-size-7"><a href="https://arxiv.org/abs/2507.20150" target="_blank"><i class="ai ai-arxiv mr-1"></i> arXiv</a></p>
+          </div>
+        </div>
+        <hr style="background-color: var(--card-border); height: 1px; margin: 1rem 0;">
+        <p class="is-size-7 has-text-grey has-text-centered">
+          &copy; 2025 SafeAGI Research Group
+        </p>
+      </div>
+    </div>
   </div>
 </footer>
 

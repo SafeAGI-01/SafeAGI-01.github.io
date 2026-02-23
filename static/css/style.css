@@ -136,6 +136,9 @@ html[data-theme="dark"] .footer {
 [data-theme="dark"] .hero-blob-3 {
   background: radial-gradient(circle, rgba(79,70,229,0.5), transparent 70%);
 }
+[data-theme="dark"] .hero-gradient::after {
+  background: linear-gradient(to bottom, transparent, #0f172a);
+}
 html[data-theme="dark"] .tag.is-info.is-light {
   background: rgba(59,130,246,0.15) !important;
   color: #93c5fd !important;
@@ -149,12 +152,23 @@ html[data-theme="dark"] .tag.is-link.is-light {
   color: #a5b4fc !important;
 }
 html[data-theme="dark"] .button.is-dark {
-  background: #334155 !important;
-  color: #e2e8f0 !important;
-  border-color: rgba(255,255,255,0.08) !important;
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255,255,255,0.12) !important;
 }
 html[data-theme="dark"] .button.is-dark:hover {
-  background: #475569 !important;
+  background: rgba(99,102,241,0.1) !important;
+  color: #a5b4fc !important;
+  border-color: rgba(99,102,241,0.4) !important;
+}
+html[data-theme="dark"] .paper-card .level-left .button.is-dark:first-child {
+  background: var(--accent-indigo) !important;
+  color: #fff !important;
+  border-color: var(--accent-indigo) !important;
+}
+html[data-theme="dark"] .paper-card .level-left .button.is-dark:first-child:hover {
+  background: var(--accent-violet) !important;
+  border-color: var(--accent-violet) !important;
 }
 html[data-theme="dark"] details summary {
   color: #f1f5f9 !important;
@@ -251,6 +265,19 @@ body {
 .hero-gradient .tag {
   position: relative;
   z-index: 1;
+}
+
+/* Hero bottom fade overlay */
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg-body));
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Hero buttons — pill style */
@@ -472,8 +499,8 @@ body {
 /* ---- Badge ---- */
 .badge-new {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 12px;
+  right: 12px;
   background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
   color: white;
   padding: 3px 10px;
@@ -486,16 +513,37 @@ body {
 }
 
 /* ---- Action Buttons ---- */
+/* Primary action button (first in row) */
+.paper-card .level-left .button.is-dark:first-child {
+  background: var(--accent-indigo);
+  color: #fff;
+  border: 1px solid var(--accent-indigo);
+  transition: all 0.15s ease;
+  font-weight: 600;
+}
+
+.paper-card .level-left .button.is-dark:first-child:hover {
+  background: var(--accent-violet);
+  border-color: var(--accent-violet);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+}
+
+/* Secondary action buttons (outlined) */
 .button.is-dark {
-  background: var(--text-dark);
-  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-body);
+  border: 1px solid var(--card-border);
   transition: all 0.15s ease;
   font-weight: 500;
 }
 
 .button.is-dark:hover {
+  background: var(--bg-section-alt);
+  color: var(--accent-indigo);
+  border-color: var(--accent-indigo);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: none;
 }
 
 /* ---- Publication Authors ---- */
@@ -571,6 +619,27 @@ body {
   color: var(--text-body);
 }
 
+/* ---- Hero Tags (semi-transparent on gradient) ---- */
+.hero-gradient .tag.is-light,
+.hero-gradient .tag.is-medium.is-light {
+  background: rgba(255,255,255,0.18) !important;
+  color: #fff !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 600;
+}
+
+.hero-gradient .tag.is-warning,
+.hero-gradient .tag.is-medium.is-warning {
+  background: rgba(255,255,255,0.22) !important;
+  color: #fff !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.25);
+  font-weight: 600;
+}
+
 /* ---- Tags ---- */
 .tag.is-info.is-light {
   background: var(--tag-info-bg) !important;
@@ -642,6 +711,20 @@ body {
 
 .footer .has-text-grey {
   color: var(--text-muted) !important;
+}
+
+.footer hr {
+  border: none;
+}
+
+/* ---- View All Papers CTA ---- */
+.button.is-rounded[style*="accent-indigo"] {
+  transition: all 0.2s ease;
+}
+
+.button.is-rounded:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79,70,229,0.3);
 }
 
 /* ---- Section Backgrounds ---- */

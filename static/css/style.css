@@ -200,6 +200,23 @@ body {
   overflow: hidden;
 }
 
+/* Hero bottom fade into body background */
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--bg-body));
+  z-index: 1;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .hero-gradient::after {
+  background: linear-gradient(to bottom, transparent, #0f172a);
+}
+
 .hero-gradient::before {
   content: '';
   position: absolute;

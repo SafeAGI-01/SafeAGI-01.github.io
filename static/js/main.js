@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    // Force dark mode styles on elements that Bulma overrides
+    var isDark = theme === 'dark';
+    document.querySelectorAll('.content-card, .box.paper-card').forEach(function(el) {
+      if (isDark) {
+        el.style.background = '#1e293b';
+        el.style.borderColor = 'rgba(255,255,255,0.06)';
+        el.style.boxShadow = '0 2px 16px rgba(0,0,0,0.3)';
+        el.style.color = '#cbd5e1';
+      } else {
+        el.style.background = '';
+        el.style.borderColor = '';
+        el.style.boxShadow = '';
+        el.style.color = '';
+      }
+    });
   }
 
   function initTheme() {

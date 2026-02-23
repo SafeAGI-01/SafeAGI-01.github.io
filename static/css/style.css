@@ -5,8 +5,8 @@
 
 /* ---- Color System (Light) ---- */
 :root {
-  --bg-gradient-start: #4F46E5;
-  --bg-gradient-end: #7C3AED;
+  --bg-gradient-start: #3730A3;
+  --bg-gradient-end: #5B21B6;
   --text-dark: #0f172a;
   --text-body: #334155;
   --text-muted: #64748b;
@@ -128,13 +128,13 @@ html[data-theme="dark"] .footer {
 
 /* Dark mode: boost blob visibility */
 [data-theme="dark"] .hero-blob-1 {
-  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
 }
 [data-theme="dark"] .hero-blob-2 {
-  background: radial-gradient(circle, rgba(124,58,237,0.6), transparent 70%);
+  background: radial-gradient(circle, rgba(124,58,237,0.35), transparent 70%);
 }
 [data-theme="dark"] .hero-blob-3 {
-  background: radial-gradient(circle, rgba(79,70,229,0.5), transparent 70%);
+  background: radial-gradient(circle, rgba(79,70,229,0.3), transparent 70%);
 }
 html[data-theme="dark"] .tag.is-info.is-light {
   background: rgba(59,130,246,0.15) !important;
@@ -202,9 +202,10 @@ body {
   background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
+}
+
+.hero-gradient .hero-body {
+  padding: 3rem 1.5rem;
 }
 
 /* Decorative blur blobs */
@@ -216,29 +217,29 @@ body {
 }
 
 .hero-blob-1 {
-  width: 600px;
-  height: 600px;
-  top: -200px;
+  width: 400px;
+  height: 400px;
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
 }
 
 .hero-blob-2 {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(124,58,237,0.4), transparent 70%);
+  width: 250px;
+  height: 250px;
+  bottom: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(124,58,237,0.25), transparent 70%);
 }
 
 .hero-blob-3 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   top: 50%;
-  left: -80px;
+  left: -60px;
   transform: translateY(-50%);
-  background: radial-gradient(circle, rgba(79,70,229,0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(79,70,229,0.2), transparent 70%);
 }
 
 .hero-gradient .title,
@@ -864,8 +865,8 @@ details p {
     padding: 1.5rem;
   }
 
-  .hero-blob-1 { width: 300px; height: 300px; }
-  .hero-blob-2 { width: 200px; height: 200px; }
+  .hero-blob-1 { width: 200px; height: 200px; }
+  .hero-blob-2 { width: 150px; height: 150px; }
   .hero-blob-3 { display: none; }
 }
 

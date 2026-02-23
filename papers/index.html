@@ -15,26 +15,27 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../static/css/style.css?v=3">
-  <!-- Inline dark mode overrides — guarantees Bulma is beaten -->
+  <link rel="stylesheet" href="../static/css/style.css?v=4">
+  <!-- Inline dark mode overrides -->
   <style>
-    html[data-theme="dark"] body{background:#18181b!important;color:#e4e4e7!important}
-    html[data-theme="dark"] .section,html[data-theme="dark"] .hero-body{background-color:transparent!important}
-    html[data-theme="dark"] .navbar,html[data-theme="dark"] .navbar.is-fixed-top{background:rgba(24,24,27,.88)!important}
-    html[data-theme="dark"] .navbar-menu{background-color:rgba(24,24,27,.96)!important}
-    html[data-theme="dark"] .navbar-item{color:#d4d4d8!important}
-    html[data-theme="dark"] .box,html[data-theme="dark"] .content-card{background:#27272a!important;color:#d4d4d8!important;border-color:rgba(255,255,255,.08)!important}
-    html[data-theme="dark"] .title,html[data-theme="dark"] .subtitle{color:#e4e4e7!important}
-    html[data-theme="dark"] .content p,html[data-theme="dark"] .content li{color:#d4d4d8!important}
-    html[data-theme="dark"] .has-text-grey{color:#a1a1aa!important}
-    html[data-theme="dark"] strong{color:#e4e4e7!important}
-    html[data-theme="dark"] .footer{background:linear-gradient(135deg,#09090b,#18181b)!important}
+    html[data-theme="dark"] body{background:#0f172a!important;color:#cbd5e1!important}
+    html[data-theme="dark"] .section{background-color:transparent!important}
+    html[data-theme="dark"] .section-alt{background-color:#1e293b!important}
+    html[data-theme="dark"] .navbar,html[data-theme="dark"] .navbar.is-fixed-top{background:rgba(15,23,42,.80)!important;border-color:rgba(255,255,255,.06)!important}
+    html[data-theme="dark"] .navbar-menu{background-color:rgba(15,23,42,.95)!important}
+    html[data-theme="dark"] .navbar-item{color:#cbd5e1!important}
+    html[data-theme="dark"] .box,html[data-theme="dark"] .content-card{background:#1e293b!important;color:#cbd5e1!important;border-color:rgba(255,255,255,.08)!important}
+    html[data-theme="dark"] .title,html[data-theme="dark"] .subtitle{color:#f1f5f9!important}
+    html[data-theme="dark"] .content p,html[data-theme="dark"] .content li{color:#cbd5e1!important}
+    html[data-theme="dark"] .has-text-grey{color:#94a3b8!important}
+    html[data-theme="dark"] strong{color:#f1f5f9!important}
+    html[data-theme="dark"] .footer{background:#020617!important}
   </style>
   <script>
     (function(){var t=localStorage.getItem('safeagi-theme');if(t){document.documentElement.setAttribute('data-theme',t)}else{document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}})();
@@ -82,6 +83,8 @@
 
 <!-- Hero Section -->
 <section class="hero hero-gradient hero-animated" style="padding-top: 52px;">
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-2 hero-title has-text-white">Papers</h1>
@@ -122,7 +125,7 @@
                   <summary class="is-size-6 has-text-weight-semibold" style="cursor: pointer;">
                     <i class="fas fa-chevron-right mr-1"></i> Abstract
                   </summary>
-                  <p class="is-size-6 mt-3 has-text-justified" style="padding-left: 1rem; border-left: 3px solid var(--bg-gradient-start);">
+                  <p class="is-size-6 mt-3 has-text-justified" style="padding-left: 1rem; border-left: 3px solid var(--accent-indigo);">
                     Reinforcement learning (RL) plays a crucial role in shaping the behavior of large language and reasoning models (LLMs/LRMs). However, it often produces brittle and unstable policies, leading to critical failures such as spurious reasoning, deceptive alignment, and instruction disobedience that undermine the trustworthiness and safety of LLMs/LRMs. Currently, these issues lack a unified theoretical explanation and are typically addressed using ad-hoc heuristics. This paper presents a rigorous mathematical framework for analyzing the stability of the mapping from a reward function to the optimal policy. We show that policy brittleness often stems from non-unique optimal actions, a common occurrence when multiple valid traces exist in a reasoning task. This theoretical lens provides a unified explanation for a range of seemingly disparate failures, reframing them as rational outcomes of optimizing rewards that may be incomplete or noisy, especially in the presence of action degeneracy. We extend this analysis from the fundamental single-reward setting to the more realistic multi-reward RL across diverse domains, showing how stability is governed by an "effective reward" aggregation mechanism. We also prove that entropy regularization restores policy stability at the cost of increased stochasticity. Our framework provides a unified explanation for recent empirical findings on deceptive reasoning, instruction-following trade-offs, and RLHF-induced sophistry, and is further validated through perturbation experiments in multi-reward RL. This work advances policy-stability analysis from empirical heuristics towards a principled theory, offering essential insights for designing safer and more trustworthy AI systems.
                   </p>
                 </details>
@@ -177,7 +180,7 @@
                   <summary class="is-size-6 has-text-weight-semibold" style="cursor: pointer;">
                     <i class="fas fa-chevron-right mr-1"></i> Abstract
                   </summary>
-                  <p class="is-size-6 mt-3 has-text-justified" style="padding-left: 1rem; border-left: 3px solid var(--bg-gradient-start);">
+                  <p class="is-size-6 mt-3 has-text-justified" style="padding-left: 1rem; border-left: 3px solid var(--accent-indigo);">
                     The rapid deployment of Large Language Models and AI agents across critical societal and technical domains is hindered by persistent behavioral pathologies including sycophancy, hallucination, and strategic deception that resist mitigation via reinforcement learning. Current safety paradigms treat these failures as transient training artifacts, lacking a unified theoretical framework to explain their emergence and stability. Here we show that these misalignments are not errors, but mathematically rationalizable behaviors arising from model misspecification. By adapting Berk-Nash Rationalizability from theoretical economics to artificial intelligence, we derive a rigorous framework that models the agent as optimizing against a flawed subjective world model. We demonstrate that widely observed failures are structural necessities: unsafe behaviors emerge as either a stable misaligned equilibrium or oscillatory cycles depending on reward scheme, while strategic deception persists as a "locked-in" equilibrium or through epistemic indeterminacy robust to objective risks. We validate these theoretical predictions through behavioral experiments on six state-of-the-art model families, generating phase diagrams that precisely map the topological boundaries of safe behavior. Our findings reveal that safety is a discrete phase determined by the agent's epistemic priors rather than a continuous function of reward magnitude. This establishes Subjective Model Engineering, defined as the design of an agent's internal belief structure, as a necessary condition for robust alignment, marking a paradigm shift from manipulating environmental rewards to shaping the agent's interpretation of reality.
                   </p>
                 </details>

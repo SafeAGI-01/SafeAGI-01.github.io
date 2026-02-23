@@ -16,26 +16,27 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../../static/css/style.css?v=3">
-  <!-- Inline dark mode overrides — guarantees Bulma is beaten -->
+  <link rel="stylesheet" href="../../static/css/style.css?v=4">
+  <!-- Inline dark mode overrides -->
   <style>
-    html[data-theme="dark"] body{background:#18181b!important;color:#e4e4e7!important}
-    html[data-theme="dark"] .section,html[data-theme="dark"] .hero-body{background-color:transparent!important}
-    html[data-theme="dark"] .navbar,html[data-theme="dark"] .navbar.is-fixed-top{background:rgba(24,24,27,.88)!important}
-    html[data-theme="dark"] .navbar-menu{background-color:rgba(24,24,27,.96)!important}
-    html[data-theme="dark"] .navbar-item{color:#d4d4d8!important}
-    html[data-theme="dark"] .box,html[data-theme="dark"] .content-card{background:#27272a!important;color:#d4d4d8!important;border-color:rgba(255,255,255,.08)!important}
-    html[data-theme="dark"] .title,html[data-theme="dark"] .subtitle{color:#e4e4e7!important}
-    html[data-theme="dark"] .content p,html[data-theme="dark"] .content li{color:#d4d4d8!important}
-    html[data-theme="dark"] .has-text-grey{color:#a1a1aa!important}
-    html[data-theme="dark"] strong{color:#e4e4e7!important}
-    html[data-theme="dark"] .footer{background:linear-gradient(135deg,#09090b,#18181b)!important}
+    html[data-theme="dark"] body{background:#0f172a!important;color:#cbd5e1!important}
+    html[data-theme="dark"] .section{background-color:transparent!important}
+    html[data-theme="dark"] .section-alt{background-color:#1e293b!important}
+    html[data-theme="dark"] .navbar,html[data-theme="dark"] .navbar.is-fixed-top{background:rgba(15,23,42,.80)!important;border-color:rgba(255,255,255,.06)!important}
+    html[data-theme="dark"] .navbar-menu{background-color:rgba(15,23,42,.95)!important}
+    html[data-theme="dark"] .navbar-item{color:#cbd5e1!important}
+    html[data-theme="dark"] .box,html[data-theme="dark"] .content-card{background:#1e293b!important;color:#cbd5e1!important;border-color:rgba(255,255,255,.08)!important}
+    html[data-theme="dark"] .title,html[data-theme="dark"] .subtitle{color:#f1f5f9!important}
+    html[data-theme="dark"] .content p,html[data-theme="dark"] .content li{color:#cbd5e1!important}
+    html[data-theme="dark"] .has-text-grey{color:#94a3b8!important}
+    html[data-theme="dark"] strong{color:#f1f5f9!important}
+    html[data-theme="dark"] .footer{background:#020617!important}
   </style>
   <script>
     (function(){var t=localStorage.getItem('safeagi-theme');if(t){document.documentElement.setAttribute('data-theme',t)}else{document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}})();
@@ -83,6 +84,9 @@
 
 <!-- Hero Section -->
 <section class="hero hero-gradient hero-animated" style="padding-top: 52px;">
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -129,6 +133,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
+        <span class="section-label">Paper</span>
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content has-text-justified">
           <p class="drop-cap">
@@ -145,6 +150,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
+        <span class="section-label">Summary</span>
         <h2 class="title is-3 section-title">Overview</h2>
         <div class="content has-text-justified">
           <p>
@@ -171,6 +177,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
+        <span class="section-label">Citation</span>
         <h2 class="title is-3 section-title">BibTeX</h2>
         <div class="bibtex-container">
           <button class="copy-button">

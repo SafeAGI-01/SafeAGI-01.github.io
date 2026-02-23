@@ -17,25 +17,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    // Force dark mode on body directly to beat Bulma
-    if (theme === 'dark') {
-      document.body.style.backgroundColor = '#18181b';
-      document.body.style.color = '#e4e4e7';
-    } else {
-      document.body.style.backgroundColor = '';
-      document.body.style.color = '';
-    }
+    var isDark = theme === 'dark';
+    // Force body background to beat Bulma
+    document.body.style.backgroundColor = isDark ? '#0f172a' : '';
+    document.body.style.color = isDark ? '#cbd5e1' : '';
     // Force cards
-    document.querySelectorAll('.content-card, .box.paper-card').forEach(function(el) {
-      if (theme === 'dark') {
-        el.style.backgroundColor = '#27272a';
+    document.querySelectorAll('.content-card, .box.paper-card, .box').forEach(function(el) {
+      if (isDark) {
+        el.style.backgroundColor = '#1e293b';
         el.style.borderColor = 'rgba(255,255,255,0.08)';
-        el.style.color = '#d4d4d8';
+        el.style.color = '#cbd5e1';
       } else {
         el.style.backgroundColor = '';
         el.style.borderColor = '';
         el.style.color = '';
       }
+    });
+    // Force section-alt
+    document.querySelectorAll('.section-alt').forEach(function(el) {
+      el.style.backgroundColor = isDark ? '#1e293b' : '';
     });
   }
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Apply theme immediately (also called before DOMContentLoaded via inline script)
+  // Apply theme immediately
   initTheme();
 
   // Listen for system theme changes

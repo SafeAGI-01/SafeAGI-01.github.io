@@ -200,23 +200,6 @@ body {
   overflow: hidden;
 }
 
-/* Hero bottom fade into body background */
-.hero-gradient::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--bg-body));
-  z-index: 1;
-  pointer-events: none;
-}
-
-[data-theme="dark"] .hero-gradient::after {
-  background: linear-gradient(to bottom, transparent, #0f172a);
-}
-
 .hero-gradient::before {
   content: '';
   position: absolute;
@@ -419,6 +402,21 @@ body {
   background-color: var(--navbar-text) !important;
   height: 2px !important;
   transition: all 0.3s ease;
+}
+
+/* ---- Content Card ---- */
+.content-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 28px 32px;
+  transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .content-card {
+  background-color: var(--card-bg) !important;
+  color: var(--content-text) !important;
 }
 
 /* ---- Card Styles ---- */

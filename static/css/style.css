@@ -208,6 +208,19 @@ body {
   padding: 3rem 1.5rem;
 }
 
+/* Flat hero for subpages — no gradient, solid dark bg */
+.hero-flat {
+  background: #1e1b4b !important;
+}
+
+.hero-flat .hero-blob {
+  display: none;
+}
+
+[data-theme="dark"] .hero-flat {
+  background: #1e293b !important;
+}
+
 /* Decorative blur blobs */
 .hero-blob {
   position: absolute;
